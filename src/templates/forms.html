@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+{% if title %}
+<h1 style="{% if title_align_center %} text-align: center {% endif %}">{{ title }}</h1>
+{% endif %}
+<form method='POST' action=''>{% csrf_token %} 
+{{ form|crispy}}
+	<input type="submit" value="Contact Us" />
+</form>
+{% endblock %}
